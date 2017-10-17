@@ -674,10 +674,30 @@ zips <- data.frame(zips)
 finaldata.m[finaldata.m$zip %in% zips$zips, 1] <- "635-02"
 finaldata.m[finaldata.m$zip %in% zips$zips, 13] <- "02"
 
+# Orlando 2
+zips <- c('34797', '32784', '32778', '32767', '32736', '32735', 
+          '32726', '32702', '32190', '32180', '32130', '32102')
+zips <- data.frame(zips)
+finaldata.m[finaldata.m$zip %in% zips$zips, 1] <- '534-02'
+finaldata.m[finaldata.m$zip %in% zips$zips, 13] <- '02'
+
+# Orlando 4
+zips <- c('34788',	'34785',	'34762',	'34748',	'34731',	'34491',
+          '34488',	'34484',	'34482',	'34481',	'34480',	'34479',
+          '34476',	'34475',	'34474',	'34473',	'34472',	'34471',
+          '34470',	'34432',	'34431',	'34420',	'33585',	'33538',
+          '33521',	'33514',	'33513',	'32696',	'32686',	'32681',
+          '32668',	'32667',	'32664',	'32617',	'32195',	'32179',
+          '32162',	'32159',	'32134',	'32133',	'32113')
+zips <- data.frame(zips)
+finaldata.m[finaldata.m$zip %in% zips$zips, 1] <- '534-04'
+finaldata.m[finaldata.m$zip %in% zips$zips, 13] <- '04'
+
+
 finaldata <- finaldata.m
 
 zipcode <- subset(zipcode, select = c('zip', 'city'))
 finaldata <- merge(finaldata, zipcode, by="zip")
 
-write.table(finaldata, file = "//Users//psullivan01//Documents//DMAZones17.csv", 
+write.table(finaldata, file = "//Users//psullivan01//Documents//DMAZones19.csv", 
             row.names=FALSE, sep=",")
